@@ -1,0 +1,16 @@
+projects/settings.py
+projects/__pycache__/
+sudoku/__pycache__/
+sudoku/migrations/
+
+*.pyc
+*.sqlite
+*.sqlite3
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
