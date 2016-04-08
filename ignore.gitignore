@@ -1,5 +1,9 @@
 /projects/settings.py
 
+<<<<<<< HEAD
+=======
+*.pyc
+>>>>>>> f0546240ef6b10fd234cf491ae54a2b095766f0c
 *.sqlite
 
 .DS_Store
