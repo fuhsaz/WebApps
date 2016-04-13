@@ -1,0 +1,19 @@
+{% extends "sudoku/basic.html" %}
+{% block titleblock %}Puzzle {{ puzzle.id }}{% endblock %}
+
+{% block content %}
+<h1>Puzzle #{{ puzzle.id }}</h1>
+<p>Difficulty: {{ puzzle.difficulty }}</p>
+
+<table>
+<tr>
+{% for s in contentsList %}
+<td><div class="cell">{{ s }}</div></td>
+{% if forloop.counter|divisibleby:"9" and forloop.counter != 0 %}
+</tr><tr>
+{% endif %}
+{% endfor %}
+</tr>
+</table>
+
+{% endblock %}
