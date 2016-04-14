@@ -1,10 +1,21 @@
 {% extends "sudoku/basic.html" %}
+{% load staticfiles %}
+
+{% block other-header-stuff %}
+
+<script src="{% static 'js/puzzle-js.js' %}" type="text/javascript"></script>
+{% endblock %}
+
 {% block titleblock %}Puzzle {{ puzzle.id }}{% endblock %}
 
+
 {% block content %}
+<div class="text-center">
 <h1>Puzzle #{{ puzzle.id }}</h1>
 <p>Difficulty: {{ puzzle.difficulty }}</p>
+</div>
 
+<div class="puzzle-wrapper">
 <table>
 <tr>
 {% for s in contentsList %}
@@ -15,5 +26,11 @@
 {% endfor %}
 </tr>
 </table>
+</div>
+
+{% comment %}
+Make it afterward so that the numbers that were put in from the start are a different color or something,
+indicating that they shouldn't be changed
+{% endcomment %}
 
 {% endblock %}
