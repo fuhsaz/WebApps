@@ -1,11 +1,6 @@
 {% extends "sudoku/basic.html" %}
 {% load staticfiles %}
 
-{% block other-header-stuff %}
-
-<script src="{% static 'js/puzzle-js.js' %}" type="text/javascript"></script>
-{% endblock %}
-
 {% block titleblock %}Puzzle {{ puzzle.id }}{% endblock %}
 
 
@@ -34,3 +29,8 @@ indicating that they shouldn't be changed
 {% endcomment %}
 
 {% endblock %}
+
+{% block extrastuff %}
+<!-- Load JS after the page to speed up load time -->
+<script src="{% static 'js/puzzle-js.js' %}" type="text/javascript"></script>
+{%endblock%}

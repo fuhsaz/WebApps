@@ -15,12 +15,28 @@
 </head>
 
 <body>
-    <div id="navbar">
-        
+    <div id="header" class="col-md-8 col-md-offset-2">
+        <div id="navbar">
+        	<a href="{% url 'sudoku:index' %}"><div class="nav-button">Home</div></a>
+        	<a href="{% url 'sudoku:puzzle' id=0 %}"><div class="nav-button two-lines">Random<br/>Puzzle</div></a>
+            <a href="{% url 'sudoku:pick' %}"><div class="nav-button two-lines">Pick A<br/>Puzzle</div></a>
+
+			<!-- Login/Logout button -->
+    		{% if user.is_authenticated %}
+			<a href="{% url 'sudoku:logout' %}?next={% url 'sudoku:index' %}"><div class="nav-button right">Log Out</div>
+			{% else %}
+			<a href="{% url 'sudoku:login' %}"><div class="nav-button right">Log In</div>
+			{% endif %}
+        	</a>
+        		
+        </div>
+
     </div>
 
     <div id="content" class="col-md-8 col-md-offset-2">
         {% block content %}{% endblock %}
     </div>
 </body>
+<script src="{% static 'js/basic-js.js' %}" type="text/javascript"></script>
+{% block extrastuff %}{%endblock%}
 </html>

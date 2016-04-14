@@ -1,5 +1,27 @@
+/* Tags */
+a{
+	text-decoration:none;
+	color:black;
+}
+a:hover{
+	text-decoration:none;
+	color:black;
+}
+body{
+	background-color:transparent;
+}
+div{
+	background-color:transparent;
+}
 h1{
 	
+}
+html{
+	background-color:#68698A;
+}
+input{
+	background-color:#B9B9C7;
+	border-style:none;
 }
 table {
 	display:table;
@@ -12,6 +34,7 @@ td {
 tr {
 }
 
+/* Classes */
 .cell{
 	width:45px;
 	height:45px;
@@ -22,8 +45,74 @@ tr {
 	line-height:45px;
 	font-size:30px;
 }
-
-.puzzle-wrapper {
+.current{
+	background-color:#B9B9C7;
+}
+.headrow{
+	background-color:#726387;
+}
+.nav-button{
+	border-style:solid;
+	border-right-width: 2px;
+	border-right-color: #35365A;
+	border-top-width:0px;
+	border-left-width:0px;
+	border-bottom-width:0px;
+	width:20%;
+	display:block;
+	text-align:center;
+	vertical-align:middle;
+	line-height:60px;
+	float:left;
+	font-size:18px;
+	overflow:hidden;
+}
+.nav-button:hover{
+	background-color:#B9B9C7;
+}
+.puzzle-wrapper{
 	display:flex;
 	justify-content:center;
+}
+.right {
+	float:right;
+	border-left-width: 2px;
+	border-left-color: #35365A;
+	border-right-width: 0px;
+}
+.td-id, .td-difficulty, .td-button{
+	padding:5px;
+	text-align:center;
+}
+.two-lines {
+	vertical-align:middle;
+	line-height:30px;
+}
+
+/* IDs */
+#content{
+	margin-top:20px;
+}
+#head-id, #head-difficulty, #head-button{
+	text-align:center;
+	padding:5px;
+}
+#loginform{
+	display:inline-block;
+	text-align:center;
+}
+#navbar{
+	width:100%;
+	min-height:60px;
+	border-radius:5px;
+	background-color:#8B8CA4;
+	overflow:hidden;
+	margin-top:5px;
+}
+#puzzles{
+	width:100%;
+	margin-top:20px;
+}
+#submit{
+	margin-top:20px;
 }

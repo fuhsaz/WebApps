@@ -1,0 +1,43 @@
+{% extends 'sudoku/basic.html' %}
+{% load staticfiles %}
+
+{% block titleblock %}Pick a Puzzle!{% endblock %}
+
+{% block content %}
+<div class="text-center">
+<h3>Pick a Puzzle!</h3>
+
+<p> Select a level of difficulty: </p>
+<select name="difficulty" id="difficulty-select">
+	<option value="all">All</option>
+	<option value="easy">Easy</option>
+	<option value="medium">Medium</option>
+	<option value="hard">Hard</option>
+</select>
+</div>
+
+<div class="col-md-4 col-md-offset-4">
+<table id="puzzles">
+	<tr class="headrow">
+		<td id="head-id">Puzzle Number</td><td id="head-difficulty">Difficulty</td><td id="head-button">Quick View</td>
+	</tr>
+	{% for puzzle in puzzle_list %}
+	<tr class="expendable"><td class="td-id">{{ puzzle.id }}</td><td class="td-difficulty">{{ puzzle.difficulty }}</td><td class="td-button"><button type="button" class="preview-button" value="{{puzzle.id}}">Click Me</button></td></tr>
+	{% endfor %}
+</table>
+</div>
+
+<div class="modal fade" id="foo_modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">Puzzle Preview</div>
+            <div class="modal-body"></div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extrastuff %}
+<script src="{% static 'js/pick-js.js' %}" type="text/javascript"></script>
+{% endblock %}

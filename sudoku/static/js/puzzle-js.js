@@ -8,7 +8,8 @@ $(document).ready(function() {
 	$('.cell').each(function(){
 		var cur = $(this).text().trim();
 		if (cur.localeCompare("") != 0) {
-			$(this).css("background-color", "#cff2a2");
+			$(this).css("background-color", "#7D8C97");
+			$(this).addClass('defaultValue');
 		}
 		if (1 <= counter && counter <= 9) {
 			$(this).parent().css("border-top-width", "3px");
@@ -38,19 +39,31 @@ $(document).ready(function() {
 		counter += 1;
 	});
 	
+	/* This will prevent the user from typing non-numeric values into boxes. Or anywhere.
+	   It is a totalitarian system. */
+	$(document).on('keypress', function(e){
+		if (e.charCode < 49 || e.charCode > 57) {
+			return false;
+		}
+	});
+
 	/* This will make it so the user can click a cell and fill in a value */
 	$(document).on('click', '.cell', function(){
-		var cur = $(this).text().trim()
-		var toAdd = "<input type='text' value='"
-		toAdd += cur;
-		toAdd += "' style='width:100%' id='newInput'/>";
-		$(this).html(toAdd);
-		$('#newInput').focus();
-		$('#newInput').select();
-		$(this).focusout(function(){
-			var newVal = $('#newInput').val();
-			$('#newInput').remove();
-			$(this).text(newVal);
-		});
+		if ($(this).hasClass('defaultValue')) {
+			return false;
+		} else {
+			var cur = $(this).text().trim()
+			var toAdd = "<input type='text' style='width:100%' id='newInput' maxlength='1' value='"
+			toAdd += cur;
+			toAdd += "' />";
+			$(this).html(toAdd);
+			$('#newInput').focus();
+			$('#newInput').select();
+			$(this).focusout(function(){
+				var newVal = $('#newInput').val();
+				$('#newInput').remove();
+				$(this).text(newVal);
+			});
+		}
 	});
 });
