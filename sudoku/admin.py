@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Puzzle, User_Puzzle
+from .models import Puzzle, User_Puzzle, Saved_Puzzle
 
 class PuzzleAdmin(admin.ModelAdmin):
 	list_display = 'id', 'difficulty', 'number_easy', 'number_medium', 'number_hard'
@@ -9,3 +9,5 @@ class PuzzleAdmin(admin.ModelAdmin):
 
 admin.site.register(Puzzle, PuzzleAdmin)
 admin.site.register(User_Puzzle)
+admin.site.register(Saved_Puzzle)
+

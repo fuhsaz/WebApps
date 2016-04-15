@@ -59,18 +59,18 @@ $(document).ready(function(){
 		});
 	});
 
-	$('.preview-button').on('click', function () {
-		var id = $(this).val();
-		var data = {"id":id};
+	$(document).on('click', '.preview-button', function() {
+		var puzID = $(this).val();
+		var data = {"puzzleID":puzID};
 	    $.ajax({
 	        type: 'POST',
-	        url: '../preview',
+	        url: '../preview/',
 	        data:data,
 	        dataType:"JSON",
 	    })
 	    .done(function (data, textStatus, jqXHR) {
-	            $('#foo_modal').find('.modal-body').html(data);
-	            $('#foo_modal').modal('show');
+	        $('#preview-window').find('.modal-body').html(data.data);
+	        $('#preview-window').modal('show');
 	    })
 	    .fail(function(xhr, status, error) {
 			console.log(xhr.responseText);

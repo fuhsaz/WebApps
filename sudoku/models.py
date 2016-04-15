@@ -25,5 +25,14 @@ class Puzzle(models.Model):
 class User_Puzzle(models.Model):
 	user = models.ForeignKey(User)
 	puzzle = models.ForeignKey(Puzzle)
-	
+
+# Saved puzzle progress for each user
+class Saved_Puzzle(models.Model):
+	user = models.ForeignKey(User)
+	contents = models.CharField(max_length=81)
+	difficulty = models.CharField(max_length=7)
+	difficultyAsNumber = models.IntegerField(default=0)
+	number_easy = models.IntegerField(default=0)
+	number_medium = models.IntegerField(default=0)
+	number_hard = models.IntegerField(default=0)
 

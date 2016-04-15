@@ -45,11 +45,30 @@ tr {
 	line-height:45px;
 	font-size:30px;
 }
+.cell-bottom{
+	border-bottom-width:3px;
+}
+.cell-left{
+	border-left-width:3px;
+}
+.cell-right{
+	border-right-width:3px;
+}
+.cell-top{
+	border-top-width:3px;
+}
 .current{
 	background-color:#B9B9C7;
 }
 .headrow{
 	background-color:#726387;
+}
+.modalContent{
+	justify-content:center;
+}
+.modalTitle{
+	font-weight:bold;
+	font-size:18px;
 }
 .nav-button{
 	border-style:solid;
@@ -69,6 +88,9 @@ tr {
 }
 .nav-button:hover{
 	background-color:#B9B9C7;
+}
+.pop-up{
+	background-color:#8B8CA4;
 }
 .puzzle-wrapper{
 	display:flex;
@@ -108,6 +130,9 @@ tr {
 	background-color:#8B8CA4;
 	overflow:hidden;
 	margin-top:5px;
+}
+#puzzle-preview{
+	margin:0 auto;
 }
 #puzzles{
 	width:100%;
